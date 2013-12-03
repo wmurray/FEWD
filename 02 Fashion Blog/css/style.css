@@ -1,0 +1,206 @@
+/* 
+Project Name: Homework, week 2
+Client: GA
+Author: Will Murray
+Student @GA in BOS
+*/
+
+
+/******************************************
+/* SETUP                   
+/*******************************************/
+
+/* GoogleFont API import */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.alignright {
+  float: right; 
+  padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+  float: left; 
+  padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES                   
+/*******************************************/
+
+body {
+     font-size: 16px;
+     line-height: 1.4;
+     font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/******************************************
+/* LAYOUT                   
+/*******************************************/
+
+/* Center the container */
+#container, header, footer{
+  width: 1200px;
+}
+
+#container {
+  margin-top: 40px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+#sidebar article {
+  width: 345px;
+  padding: 0;
+  float: left;
+}
+
+/******************************************
+/* ADDITIONAL STYLES                   
+/*******************************************/
+
+body {
+  background: #FFF;
+  padding-left: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+header>h1>a {
+  color: #FF0000;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+header>h2 {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+#main ul {
+  width: 1080px;
+  background: #000;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#main li {
+  width: 180px;
+  height: 40px;
+  border-right: 1px solid #FFF;
+  display: inline-block;
+}
+
+#main a { 
+  color: #FFF;
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0;
+}
+
+#posts {
+  float: left;
+  width: 687px;
+}
+
+article {
+  background: #FFF;
+  font-weight: 300;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #CCC;
+}
+
+img {
+  width: 687px;
+  height: 228px;
+}
+
+h2 {
+  color: #CCC;
+  font-weight: 300;
+  font-size: 36px;
+  margin: 0;
+}
+
+article>h2>a {
+  color: #000;  
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+#posts>article>p:first-letter {
+  color: #CCC;
+  font-size: 60px;
+  padding-right: 10px;
+  float: left;
+}
+
+h4>a {
+  color: #FF0000;
+  text-decoration: none;
+  float: right;
+}
+
+#sidebar {
+  width: 345px;
+  margin-left: 80px;
+  margin-top: 45px; 
+  float: left;
+  }
+
+#sidebar h3 {
+  margin-top: 30px;
+}
+
+#sidebar h4>a {
+  margin-bottom: 20px;
+}
+
+#sidebar ul a {
+  color: #000;
+}
+
+.ad-space {
+  height: 250px;
+  width: 300px;
+  background-color: #CCC;
+  margin: 22.5px;
+}
+
+.ad-space h1 {
+  display: block;
+  color: #999;
+  font-family: serif;
+  font-size: 36px;
+  margin: 0 auto;
+}
