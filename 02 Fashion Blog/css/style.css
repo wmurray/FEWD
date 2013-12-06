@@ -105,7 +105,7 @@ header>h2 {
 }
 
 #main ul {
-  width: 1080px;
+  width: 1065px;
   background: #000;
   padding: 0;
   list-style: none;
@@ -113,10 +113,14 @@ header>h2 {
 }
 
 #main li {
-  width: 180px;
+  width: 175px;
   height: 40px;
   border-right: 1px solid #FFF;
   display: inline-block;
+}
+
+#main ul:last-child{
+  border: none;
 }
 
 #main a { 
