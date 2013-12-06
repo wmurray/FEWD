@@ -119,10 +119,6 @@ header>h2 {
   display: inline-block;
 }
 
-#main ul:last-child{
-  border: none;
-}
-
 #main a { 
   color: #FFF;
   font-weight: 300;
