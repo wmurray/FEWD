@@ -9,7 +9,7 @@
 // next image function
   function next(event){
     event.preventDefault();
-   if (i+1<images.length){
+   if (i+1<foods.length){
     showImage(++i);
    }
 };
@@ -33,14 +33,14 @@
   // advance image to next image.
   $(document).ready(function(){
     $("#rating").on("change",function(){
-      if(i<images.length){
+      if(i<foods.length){
       scores[i]=$("#rating").val();
       next();
     }
   });
   // back and skip on-click listeners - must be inside document.ready function.
-  $("#skip").on('click',next);
-  $("#back").on('click',previous);
+  $("#skip").on('click', next);
+  $("#back").on('click', previous);
 });
 
 // adding numbers stored in all indexes at the end. averaging them.
