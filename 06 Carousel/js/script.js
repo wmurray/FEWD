@@ -5,43 +5,45 @@
 // create an array for scores
   var scores = []
 
-
-// next image function
-  function next(event){
-    event.preventDefault();
-   if (i+1<foods.length){
-    showImage(++i);
-   }
-};
-
-// previous image function
-  function previous(event){
-    event.preventDefault();
-    if (i-1>==0){
-      showImage(--i);
-    }
-  };
-
-// function that changes images, either next or previous.
-// Used by previous.next image buttons on-click listener functions.
-  function showImage(){
-    $("#carousel").attr('src', foods[i]);
-  };
-
-// Food rating using dropdown.
+   // Food rating using dropdown.
   // writing the rating to an array.
   // advance image to next image.
   $(document).ready(function(){
-    $("#rating").on("change",function(){
+    $("#rating").on("change",function(e){
       if(i<foods.length){
-      scores[i]=$("#rating").val();
-      next();
-    }
-  });
-  // back and skip on-click listeners - must be inside document.ready function.
-  $("#skip").on('click', next);
-  $("#back").on('click', previous);
-});
+        scores[i]=$("#rating").val();
+        next(e);
+      }
+    });
 
-// adding numbers stored in all indexes at the end. averaging them.
-// displaying in text average score.
+  // back and skip on-click listeners - must be inside document.ready function.
+    $("#skip").on('click', next);
+    $("#back").on('click', previous);
+
+
+  // adding numbers stored in all indexes at the end. averaging them.
+  // displaying in text average score.
+
+  // next image function
+    function next(event){
+      event.preventDefault();
+     if (i+1<foods.length){
+      showImage(++i);
+     }
+  };
+
+  // previous image function
+    function previous(event){
+      event.preventDefault();
+      if ((i-1)>=0){
+        showImage(--i);
+      }
+    };
+
+  // function that changes images, either next or previous.
+  // Used by previous.next image buttons on-click listener functions.
+    function showImage(){
+      $("#carousel").attr('src', foods[i]);
+    };
+
+  });
