@@ -117,7 +117,8 @@ var brainCount = 0;
       $('.winner').text('Player 2');
     };
     resetCounts();
-    $('feed-wide').text('New Game').addClass('new-game');
+    $('.feed-wide').addClass('new-game');
+    $('.feed-wide').text('New Game');
   };
 
 // Rules pop-up/overlay. Will contain the rules-text div.
@@ -127,22 +128,33 @@ var brainCount = 0;
 // If a player is frenzied and outscores the player that broke the threshold, 
 // shows victory state for that player.
 function checkScore() {
-  if (playerOneScore >= 6 || playerTwoScore >= 6) {
+  if (playerOneScore >= 13 || playerTwoScore >= 13) {
     $('.frenzy').removeClass('hidden');
     $('.turn-stats').addClass('frenzy');
     $('.rest').addClass('hidden');
     $('.feed').addClass('feed-wide');
-  } else if (playerOneScore >= 6 && playerTwoScore >= 6 && playerOneScore >= playerTwoScore && $('.active-player').has('span#player-one-score').length > 0) {
+  } else if (playerOneScore >= 13 && playerTwoScore >= 13 && playerOneScore >= playerTwoScore && $('.active-player').has('span#player-one-score').length > 0) {
       $('.frenzy .turn-stats').addClass('hidden');
       $('.game-over').removeClass('hidden');
       $('.winner').text('Player 1');
-  } else if (playerOneScore >= 6 && playerTwoScore >= 6 && playerOneScore <= playerTwoScore && $('.active-player').has('span#player-two-score').length > 0) {
+      $('.feed-wide').addClass('new-game');
+      $('feed-wide').text('New Game');
+  } else if (playerOneScore >= 13 && playerTwoScore >= 13 && playerOneScore <= playerTwoScore && $('.active-player').has('span#player-two-score').length > 0) {
       $('.frenzy .turn-stats').addClass('hidden');
       $('.game-over').removeClass('hidden');
       $('.winner').text('Player 1');
-  } else {
-    $('.player').toggleClass("active-player");
+      $('.feed-wide').addClass('new-game');
+      $('feed-wide').text('New Game');
   };
+
+};
+
+// New Game function. 
+// Resets all things to default
+function newGame(){
+  $('.status .feed .game-over').addClass('hidden');
+  $('.turn-stats').removeClass('hidden');
+  $('.feed').removeClass('feed-wide');
 };
 
 // click event handler for "Feed" button, "Rest" button, "Rules" 
@@ -151,12 +163,16 @@ function checkScore() {
     $('.feed').on('click', function(){
       if($(this).hasClass('feed-wide')) {
           frenziedFeed.call(this);
+      } else if ($(this).hasClass('new-game')) {
+          newGame.call(this);
       } else {
-        feed.call(this);
+          feed.call(this);
       }
     });
     $('.rest').on('click', passTurn);
-    
+    $('.rules').on('click', function(){
+      $('#rules-text').toggleClass('hidden');
+    });
   });
 
 
