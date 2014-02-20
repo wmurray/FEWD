@@ -11,7 +11,7 @@ function throwRock() {
     playerWin();
   } else if (randomWeapon === "paper") {
     computerWin();
-  } else if (randomWeapon === "rock") {
+  } else (randomWeapon === "rock") {
     youTied();
   }
 }
@@ -22,7 +22,7 @@ function throwPaper() {
     playerWin();
   } else if (randomWeapon === "scissors") {
     computerWin();
-  } else if (randomWeapon === "paper") {
+  } else (randomWeapon === "paper") {
     youTied();
   }
 
@@ -34,7 +34,7 @@ function throwScissors() {
     playerWin();
   } else if (randomWeapon === "rock") {
     computerWin();
-  } else if (randomWeapon === "scissors") {
+  } else (randomWeapon === "scissors") {
     youTied();
   }
 }
